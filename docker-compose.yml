@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  pwn:
+    build: .
+    image: lazyfrag:latest
+    container_name: lazyfrag_pwn
+    network_mode: "host"
+    volumes:
+      - "${LOCAL_PATH}:/work"
+    tty: true
+    stdin_open: true
+    environment:
+      - PYTHONUNBUFFERED=1
+#    # Optional: auto-run exploit on start
+#    # command: ["python3","/work/exp_auto.py","run"]
